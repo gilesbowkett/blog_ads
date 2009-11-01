@@ -1,15 +1,19 @@
-<div style="width:150px; font-family: 'Gill Sans', Futura, Helvetica, sans-serif;">
+<% @ads.each do |ad| %>
 
-  <div>
-    <strong><a target="_blank" href="<%= @ad.link %>"><%= @ad.title %></a></strong>
+  <div style="width:150px; font-family: 'Gill Sans', Futura, Helvetica, sans-serif; padding-top: 5px; padding-bottom: 5px;">
+
+    <div>
+      <strong><a target="_blank" href="<%= ad.link %>"><%= ad.title %></a></strong>
+    </div>
+
+    <div style="padding-left: 5px;">
+      <%= ad.text %>
+    </div>
+
+    <div>
+      <a target="_blank" href="<%= ad.link %>"><%= ad.link(:pretty) %></a>
+    </div>
+
   </div>
 
-  <div style="padding-left: 5px;">
-    <%= @ad.text %>
-  </div>
-
-  <div>
-    <a target="_blank" href="<%= @ad.link %>"><%= @ad.link(:pretty) %></a>
-  </div>
-
-</div>
+<% end %>
